@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Enrollment</title>
+    <link rel="stylesheet" href="display_activity_details.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/Images/jss.png" type="image/svg" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            /* margin:100px auto; */
+            height: max-content;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<nav id="nav_bar navbar sticky-top navbar-light bg-light">
+    <div id="logo">
+        <a href="#"><img id="nss_logo" src="assets/Images/jss.png" alt="National Service Scheme"></a>
+        <div id="logo_text">
+            <h1>JSSATE-B</h1>
+            <p>Srinivaspura</p>
+        </div>
+    </div>
+    <div id="nav_bg"></div>
+    <ul id="nav_links">
+        <li><a class="nav_link nav-active" href="#">Home</a></li>
+        <li><a class="nav_link" href="./register.html" target="_blank">Sign Up</a></li>
+        <li><a class="nav_link" href="./events.html">Events</a></li>
+        <li><a class="nav_link" href="./gallery.html">Gallery</a></li>
+        <li><a class="nav_link" href="./contactus.html">Contact Us</a></li>
+        <li>
+            <button id="vlog" class="btn btn-primary" onclick="openLoginPage()">Log-out</button>
+            <script>
+                function openLoginPage() {
+                    window.open('login.html', '_blank');
+                }
+            </script>
+        </li>
+    </ul>
+    <div id="hamburger">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+    </div>
+</nav>
+
+<body>
+    <div class="container">
+
+        <div class="left-section" style="width: 40%;">
+            <form id="display_activity">
+                <h2>Volunteer Enrollment</h2>
+                <div class="form-group">
+                    <label for="enrollment-id">Enrollment ID:</label>
+                    <input type="text" id="enrollment-id" name="enrollment-id">
+                </div>
+                <div class="form-group">
+                    <label for="volunteer-name">Volunteer Name:</label>
+                    <input type="text" id="volunteer-name" name="volunteer-name">
+                </div>
+                <div class="form-group">
+                    <label for="activity-id">Activity ID:</label>
+                    <input type="text" id="activity-id" name="activity-id">
+                </div>
+                <div class="form-group">
+                    <label for="activity-name">Activity Name:</label>
+                    <input type="text" id="activity-name" name="activity-name">
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <input type="text" id="duration" name="duration">
+                </div>
+                <div class="form-group">
+                    <label for="organizer">Organizer:</label>
+                    <input type="text" id="organizer" name="organizer">
+                </div>
+                <center><button type="submit">Submit</button></center>
+            </form>
+        </div>
+
+        <div class="right-section" style="margin-top: 5.6rem; width: 55%;">
+            <h2>Activity List</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Activity ID</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Organizer</th>
+                        <th>Action</th> <!-- New column for the "+" button -->
+                    </tr>
+                </thead>
+                <tbody id="activityData">
+                    <!-- Activity data will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <!-- Add the button here -->
+            <br><br>
+            <center>
+                <button id="attendanceButton" class="btn btn-primary"
+                    style="background-color:rgb(37, 150, 190); margin-bottom: 1rem;  ;">Volunteer Attendance
+                    Tracking</button>
+            </center>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve enrollment ID and full name from localStorage
+            const enrollmentID = localStorage.getItem('enrollmentID');
+            const fullName = localStorage.getItem('fullName');
+
+            // Set enrollment ID and full name as values of input fields
+            document.getElementById('enrollment-id').value = enrollmentID;
+            document.getElementById('volunteer-name').value = fullName;
+        });
+    </script>
+    <script>
+        // Add an event listener to the attendanceButton
+        document.getElementById('attendanceButton').addEventListener('click', () => {
+            // Open attendance_tracking.html in a new tab
+            window.open('attendance_tracking.html', '_blank');
+        });
+
+        async function fetchActivityData() {
+            try {
+                const response = await fetch('http://localhost:8000/activity_data');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                displayActivityData(data);
+            } catch (error) {
+                console.error('Error fetching activity data:', error);
+            }
+        }
+
+        function displayActivityData(data) {
+            const activityDataElement = document.getElementById('activityData');
+            activityDataElement.innerHTML = '';
+
+            data.forEach(activity => {
+                const row = document.createElement('tr');
+                Object.values(activity).forEach(value => {
+                    const cell = document.createElement('td');
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+
+                const buttonCell = document.createElement('td');
+                const button = document.createElement('button');
+                button.textContent = '+';
+                button.addEventListener('click', () => {
+                    populateFields(activity);
+                });
+                buttonCell.appendChild(button);
+                row.appendChild(buttonCell);
+
+                activityDataElement.appendChild(row);
+            });
+        }
+
+        function populateFields(activity) {
+            document.getElementById('activity-id').value = activity['ActivityID'];
+            document.getElementById('activity-name').value = activity['Description'];
+            document.getElementById('duration').value = activity['Duration'];
+            document.getElementById('organizer').value = activity['Organizer'];
+        }
+
+        fetchActivityData();
+
+        // Add the event listener for form submission
+        document.getElementById('display_activity').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = {
+                enrollmentid: form.elements['enrollment-id'].value,
+                volunteername: form.elements['volunteer-name'].value,
+                activityid: form.elements['activity-id'].value,
+                activityname: form.elements['activity-name'].value,
+                duration: form.elements['duration'].value,
+                organizer: form.elements['organizer'].value
+            };
+
+            try {
+                const response = await fetch('http://localhost:8000/display_activity', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    console.log('Activity added successfully');
+                    alert('Activity added successfully');
+                    form.reset(); // Reset the form after successful addition
+                    fetchActivityData(); // Update the activity list after adding a new activity
+                } else {
+                    console.error('Error adding activity');
+                    alert('Error adding activity');
+                }
+            } catch (error) {
+                console.error('Error adding activity:', error);
+                alert('Error adding activity');
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('enrollForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            const jsonObject = {};
+            formData.forEach((value, key) => {
+                jsonObject[key] = value;
+            });
+
+            try {
+                const response = await fetch('http://localhost:8000/enroll', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonObject)
+                });
+
+                const responseData = await response.json();
+
+                if (response.ok) {
+                    console.log('Volunteer enrolled successfully');
+                    alert('Volunteer enrolled successfully');
+                    form.reset(); // Reset the form after successful enrollment
+                    window.open('display_activity_details.html', '_blank'); // Open display_activity_details.html in a new tab
+                } else {
+                    console.error('Error enrolling volunteer');
+                    alert('Error enrolling volunteer');
+                }
+            } catch (error) {
+                console.error('Error enrolling volunteer:', error);
+                alert('Error enrolling volunteer');
+            }
+        });
+    </script>
+
+</body>
+<footer>
+    <div class="row fm justify-content-center">
+        <div class="footer_box col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="text">
+                FOLLOW US ON
+            </div>
+            <div class="sm">
+                <button class="sm-btn" onclick="window.open('https://www.facebook.com/JSSATEBlore/','_blank')">
+                    <i class="fa fa-facebook"></i>
+                </button>
+                <button class="sm-btn"
+                    onclick="window.open('https://www.instagram.com/jssateb_official/?hl=en','_blank')">
+                    <i class="fa fa-instagram"></i>
+                </button>
+                <button class="sm-btn" onclick="window.open('https://www.youtube.com/watch?v=MRw-MADIXe0','_blank')">
+                    <i class="fa fa-youtube"></i>
+                </button>
+                <button class="sm-btn" onclick="window.open('https://github.com/dashboard','_blank')">
+                    <i class="fa fa-github"></i>
+                </button>
+            </div>
+            </button>
+        </div>
+    </div>
+    <div id="cop">
+        <a href="#">
+            <button id="btn">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </a>
+    </div>
+</footer>
+
+</html>

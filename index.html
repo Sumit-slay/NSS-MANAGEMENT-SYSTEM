@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | NSS JSSATE-B</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/Images/jss.png" type="image/svg" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="home">
+    <!-- Navbar Starting -->
+    <nav id="nav_bar navbar sticky-top navbar-light bg-light">
+        <div id="logo" >
+            <a href="#"><img id="nss_logo" src="assets/Images/jss.png" alt="National Service Scheme"></a>
+            <div id="logo_text">
+                <h1>JSSATE-B</h1>
+                <p>Srinivaspura</p>
+            </div>
+        </div>
+        <div id="nav_bg"></div>
+        <ul id="nav_links">
+            <li><a class="nav_link nav-active" href="#">Home</a></li>
+            <li><a class="nav_link" href="./register.html"  target="_blank">Sign Up</a></li>
+            <li><a class="nav_link" href="./events.html">Events</a></li>
+            <li><a class="nav_link" href="./gallery.html">Gallery</a></li>
+            <li><a class="nav_link" href="./contactus.html">Contact Us</a></li>
+            <li>
+                <button id="vlog" class="btn btn-primary" onclick="openLoginPage()">Volunteer Login</button>
+                <script>
+                function openLoginPage() {
+                    window.open('login.html', '_blank');
+                    }
+                    </script>
+            </li>
+        </ul>
+        <div id="hamburger">
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+        </div>
+    </nav>
+
+    <!-- IMAGE SLIDER STARTING -->
+    <section id="imgs">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/Images/v1.png" height="900px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/Images/gecw_img1.png"  height="900px" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/Images/v2.png" height="900px" class="d-block w-100" alt="...">                
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="filter"></div>
+    </section>
+
+
+    <section id="s1">
+
+        <!-- Quote -->
+        <div id="qoute_box">
+            <div id="qoute_head">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div id="qoute">
+                The best way of finding your self is to lose your self in the service of others. 
+            </div>
+            <div id="qoute_by">
+                - Mahatma Gandhi
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="about">
+            <br><br><br><br>
+            <div class="about_us">
+                <h2>
+                    ABOUT US
+                </h2>
+                <p>
+                    &emsp; &emsp; &emsp; &emsp;
+                    The National Service Scheme (NSS) is a Central Sector Scheme of Government of India, Ministry of Youth Affairs & Sports. It provides opportunity to the students of 11th & 12th Classes  at  Board level, student youth of Technical Institution, Graduate & Post Graduate at University level of India to take part in various government lead community service activities & programmes.The soul aim of the NSS is to provide hands on experience to youth in delivering community service. Since inception of the NSS in the year 1969, the strength increased from 40,000 to over 3.8 million  to the end of March 2018 students from various universities, colleges and Institutions have volunteered to  in various community service programmes.
+                </p>
+            </div>
+
+            <!-- MISSION AND VISION -->
+            <div id="mav">
+                <div class="mv">
+                    <svg class="svg-mv" width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150 20C131.83 20 114.548 23.7869 98.8281 30.5469L108.281 40C110.241 41.96 111.947 44.1167 113.437 46.3867C124.897 42.3267 137.17 40 150 40C210.65 40 260 89.35 260 150C260 210.65 210.65 260 150 260C89.35 260 40 210.65 40 150C40 137.17 42.3267 124.907 46.3867 113.457C44.1167 111.967 41.96 110.251 40 108.281L30.5469 98.8281C23.7869 114.548 20 131.83 20 150C20 221.68 78.32 280 150 280C221.68 280 280 221.68 280 150C280 78.32 221.68 20 150 20ZM39.9023 29.9023C37.913 29.9029 35.969 30.4967 34.3189 31.6078C32.6688 32.7189 31.3876 34.2969 30.639 36.14C29.8905 37.9832 29.7086 40.0077 30.1166 41.9547C30.5246 43.9017 31.5041 45.6828 32.9297 47.0703L45.8594 60H37.1484C30.8184 60 27.6489 67.6489 32.1289 72.1289L54.1406 94.1406C57.8906 97.8906 62.9812 100 68.2812 100H85.8594L142.93 157.07C143.851 158.03 144.955 158.796 146.176 159.324C147.397 159.852 148.712 160.131 150.042 160.144C151.373 160.158 152.692 159.906 153.924 159.403C155.156 158.9 156.275 158.156 157.216 157.216C158.156 156.275 158.9 155.156 159.403 153.924C159.906 152.692 160.158 151.373 160.144 150.042C160.131 148.712 159.852 147.397 159.324 146.176C158.796 144.955 158.03 143.851 157.07 142.93L100 85.8594V68.2812C100 62.9813 97.8906 57.8906 94.1406 54.1406L72.1289 32.1289C67.6489 27.6489 60 30.8184 60 37.1484V45.8594L47.0703 32.9297C46.1384 31.9717 45.024 31.2103 43.7928 30.6903C42.5617 30.1704 41.2388 29.9024 39.9023 29.9023ZM150 60C139.36 60 129.187 61.9416 119.707 65.3516C119.787 66.3316 120 67.2912 120 68.2812V77.5781L126.543 84.1211C133.893 81.5011 141.77 80 150 80C188.59 80 220 111.4 220 150C220 188.6 188.59 220 150 220C111.41 220 80 188.6 80 150C80 141.77 81.4911 133.893 84.1211 126.543L77.5781 120H68.2812C67.2912 120 66.3316 119.787 65.3516 119.707C61.9516 129.187 60 139.36 60 150C60 199.62 100.37 240 150 240C199.63 240 240 199.62 240 150C240 100.38 199.63 60 150 60ZM150 100C147.64 100 145.395 100.383 143.125 100.703L171.211 128.789L171.191 128.809C176.631 134.239 180 141.73 180 150C180 166.54 166.54 180 150 180C141.73 180 134.239 176.631 128.809 171.191L128.789 171.211L100.703 143.125C100.383 145.395 100 147.64 100 150C100 177.57 122.43 200 150 200C177.57 200 200 177.57 200 150C200 122.43 177.57 100 150 100Z" fill="#FF4949"/>
+                    </svg>
+                    <div class="mv-box">
+                        <h2>OUR MISSION</h2>
+                        <p>
+                            To develop personality of youth through voluntary community services. NSS strives to install  social welfare idea in youth and help the needy people to live a life of dignity
+                        </p>
+                    </div>
+                </div>
+                <div class="mv">
+                    <svg class="svg-mv" width="275" height="275" viewBox="0 0 275 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58.9261 127.884L21.3303 146.505L18.6098 141.055C16.1741 136.203 10.2813 134.249 5.42963 136.665C0.577924 139.09 -1.38633 144.993 1.03952 149.845L30.5033 208.772C32.2319 212.22 35.689 214.203 39.3032 214.203C40.7764 214.203 42.2791 213.87 43.6835 213.172C48.5352 210.746 50.4995 204.844 48.0736 199.992L45.1174 194.08L82.5659 174.486L58.9261 127.884ZM98.5058 262.819C97.2291 268.024 100.372 273.426 105.675 274.703C106.461 274.899 107.247 274.997 108.032 274.997C112.452 274.997 116.479 272.051 117.559 267.533L132.979 206.052C126.005 205.266 119.622 203.302 114.023 200.65L98.5058 262.819ZM188.272 187.588C182.772 190.141 176.88 192.891 170.496 195.936L207.326 269.595C208.995 273.033 212.433 274.997 216.066 274.997C217.54 274.997 219.013 274.703 220.486 273.917C225.298 271.56 227.263 265.667 224.807 260.756L188.272 187.588ZM211.588 17.2673L208.013 10.1174L207.817 10.2156L207.797 10.2255L205.076 5.16751C202.503 0.394366 196.542 -1.39311 191.778 1.17025C187.005 3.75324 185.208 9.70493 187.781 14.4683L190.207 18.9664L96.9344 64.9201C87.3096 69.6343 80.2383 77.786 76.8008 87.8037C73.3634 97.9196 74.0509 108.821 78.7651 118.348L101.943 165.392C102.14 165.883 102.434 166.374 102.729 166.767C103.122 167.552 103.515 168.338 104.006 169.026C105.184 170.892 106.461 172.561 107.934 174.133C110.881 177.668 114.515 180.615 118.639 182.775C120.604 183.856 122.666 184.74 124.827 185.525C128.952 186.999 133.175 187.686 137.398 187.686H137.791C143.782 187.686 149.773 186.311 155.371 183.561L162.541 180.025L180.121 171.383L186.701 168.142H186.897L186.996 168.044L209.486 156.945H209.584L217.638 152.919L252.965 135.545L256.52 142.145C258.298 145.455 261.686 147.321 265.183 147.321C266.754 147.321 268.345 146.947 269.828 146.152C274.601 143.569 276.399 137.617 273.825 132.854L211.588 17.2673Z" fill="#FF4949"/>
+                    </svg>
+                    <div class="mv-box">
+                        <h2>OUR VISION</h2>
+                        <p>
+                            To nuture and invigorate the youth to serve the society and work selflessly for betterment of our nation . NSS-GEC-JSSATEB works with the same. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="more">
+                <button onclick= "window.open('https://nss.gov.in/mission-objectives','_blank')" id="smore">Read more...</button>
+            </div>
+        </div>
+    </section>
+
+<!-- cureent status -->
+    <section id="nss_sts">
+        <div id="nss_sts_focus"></div>
+        <div class="row">
+            <div class="status col-12 col-sm-12 col-md-4">
+                <h1>
+                    <span class="count">200</span>
+                </h1>
+                <h4>
+                    Volunteers
+                </h4>
+            </div>
+            <div class="status col-12 col-sm-12 col-md-4">
+                <h1>
+                    <span class="count">1000</span>+
+                </h1>
+                <h4>
+                    Community Hours
+                </h4>
+            </div>
+            <div class="status col-12 col-sm-12 col-md-4">
+                <h1>
+                    <span class="count">100</span>+
+                </h1>
+                <h4>
+                    Programs
+                </h4>
+            </div>
+        </div>
+    </section>
+
+<!-- Home Gallery -->
+    <section id="highlights">
+        <div class="head">
+            <h1>
+                GALLERY
+            </h1>
+            <p>
+                Our favourite moments  captured in our heart
+            </p>
+        </div>
+        <div class="img_boxes row justify-content-center">
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLUaNmnIxsjATT-BB0l99CQ92YMxM2caB4NrxktnY7zgqzLDG7vrAtXJAAygORpN4u0iXVRX2luoltvblrDk0LUdSjfmBEfu4BEe5aHLxDcEtaXG7g3HXcAFnHyUOt9TIUS5KF_wNp78R-yMt5x3_KPV=w1371-h914-no?authuser=0" alt="" srcset="">
+                </div>
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLXrJzdVztWxsJyBgy0dwsAOlgYYeNPl9YxacDLt4Os1ZpJm4BT_gsuKIeqN5YTG1Vcc_p3EN1s2T6lzR4I_SwGUwDpZNiEcDdce86fuB04_w8KsWr5yQ0ervb41rYdEiY357SKPHKd6Sr63h_Pd5J8Y=w1371-h914-no?authuser=0" alt="" srcset="">
+                </div>
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLX_UKF7xytIkQEvJgaZ-9-8H0OH_K3lIiWvVVXi2T-g5PEZyz5kiF0FO1keiTGMoEtMhPNbXqYMzR4eBTeJvkoHNKGFrN_elRV_QgHrxD7uxiqPMN6-UXepLivzg8wQQg1ADeoszc-SokGqxs1EqGag=w1371-h914-no?authuser=0" alt="" srcset="">
+                </div>
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLVazqZagSb8m0P5pd7Hg92UhN7UQ8v2LQpC4M7A_LkD3pycqf37A2PJbMWIdcas-YXczMpyRaqz0v-d1CzNkoakln1UUe7k_dVKBznSPvpMAT_uW1upppC-PRD1str4mM_zvo2tvtkqF5Nnt2WWpTpF=w1001-h667-no?authuser=3" alt="" srcset="">
+                </div>
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" data-full="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" alt="" srcset="">
+                </div>
+
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+            <div class="h_box">
+                <div class="h_img">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLW-6ghU8sjeEreX3zaVe5kGexKQqU-canyapOdtQwHXvjJOOf1_mHzWNjViBSm92gbIfXm-j4cUGscAuwW3rAEKxEG6ujn6AjmuhsC1RAO4l2_L-R0du25Ke8AtWmBgwoSc1-j9YzigJgym9m07qPV2=w1280-h901-no?authuser=0" alt="" srcset="">
+                </div>
+                <div class="hbh">
+                    <button class="h_view" onclick="window.location.href='/gallery.html'">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <button id="smore" onclick="window.location.href='/gallery.html'">See more...</button>
+        </div>
+    </section>
+<!-- Latest programs and activities -->
+    </section>
+    <section id="latest">
+        <div class="lp">
+            <h1>
+                LATEST PROGRAMS & ACTIVITIES
+            </h1>
+            <div class="hts_prg">
+                <div class="prgs">
+                    <div class="prg_img">
+                        <img src="https://lh3.googleusercontent.com/pw/AM-JKLWaI4WtyrW8WXTbLrwr90HuCJ73FrTeS5rjb4URMdjVOrshwRW8HyISLr1MBlLHNTMId__zA659Ks7rT4Nco8SCeIZqdWY_PoiWNKlUJq3mKZaeqHIeuuXesGD-p6nLRytPMUJP5hqN9JczpcqkT0RF=w543-h667-no?authuser=3" srcset="">
+                    </div>
+                    <div class="prg_text">
+                        <h4>
+                        BLOOD DONATION 
+                        </h4>
+                        <p>
+                        As part of World Aids Day , NSS GECW Unit no 168 & 263  in collaboration with Red Ribbon Club and Rudhira Sena organized a blood donation camp ‘PRANA’  on 1 st Dec  2021 . The camp was organised successfully with help of doctors from Government Medical College, Bengaluru.Around 70 donors have donated their blood .
+                        </p>
+                    </div>
+                </div>
+                <div class="prgs">
+                    <div class="prg_img">
+                        <img src="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" data-full="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" alt="IMG" srcset="">
+                    </div>
+                    <div class="prg_text">
+                        <h4>
+                        COVID VACCINATION DATA SORTING 
+                        </h4>
+                        <p>
+                        In order to make Bengaluru a fully vaccinated district, NSS Units of GECW worked alongside the  Health Department in collaboration with Collectorate to collect vaccination details from the residents. Volunteers were able to complete a milestone of more than 7000 residents from Bengaluru.
+                        </p>
+                    </div>
+                </div>
+                <div class="prgs">
+                    <div class="prg_img">
+                        <img src="https://lh3.googleusercontent.com/pw/AM-JKLWozmZasTurV5y4jQQYy9EJFVg6yPDzwqryMMv_GmewOO57i-61sQTvjHxwxVQYzyJMy4Jygj-TqB3jR4R6nfPkkC8YRh2UU-ePDwtj-nQDsvdgPKxLe8wvw0jIF4fM0Ae1DyXF2lSYxXoI-DiPeecK=w890-h667-no?authuser=3" alt="IMG" srcset="">
+                    </div>
+                    <div class="prg_text">
+                        <h4> 
+                        ECO BRICKS
+                        </h4>
+                        <p>
+                        NSS volunteers of GECW keeps inspiring world through their sustainability project ECOBRICK in which they create eco bricks which are reusable building blocks created by solid non-biodegradable waste placed into a plastic bottle to a set density.They are trying to put an end to the biggest threat of humanity, the plastic waste in an innovative way being responsible Engineers.The eco bricks can be used to create garden spaces and  build workspaces in the campus .
+                        </p>
+                    </div>
+                </div>
+                <div class="prgs">
+                    <div class="prg_img">
+                        <img src="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" data-full="https://lh3.googleusercontent.com/pw/AM-JKLXC2Jo6PqCSraq8rwNJg-7KF5EwE5Ult3vy4qX0WPjoTlLBrppEMWSfpfO9bPWW3wMxzXH7ePfBhdpW9HD6P72UnDnd3G9-mY96S0Mq_hQVeRQfEPgxGdQ2pFNF3Ql_gA_Wfx7IRLDpZYOmWJD0Ala0=w1407-h938-no?authuser=5" alt="IMG" srcset="">
+                    </div>
+                    <div class="prg_text">
+                        <h4>
+                        CHC CLEANING
+                        </h4>
+                        <p>
+                        NSS volunteers are usually roped in to keep villages clean  and educate rural people about keeping their surroundings clean. This time ,their services our volunteers were utilised to clean the CHC premises. Band of volunteers armed with brushes and brooms cleaning its premises and surroundings.They cleaned the premises and painted the walls of entrances and hospital wards. The cleaning drive was conducted as part of 7 days residential camp, Navam. Over 200 participants in the camp and other volunteers, were actively involved in the drive conducted.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    
+</body>
+<footer>
+    <div class="row fm justify-content-center">
+        <div class="footer_box col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="text">
+                FOLLOW US ON
+            </div>
+            <div class="sm">
+                <button class="sm-btn" onclick= "window.open('https://www.facebook.com/JSSATEBlore/','_blank')">
+                    <i class="fa fa-facebook"></i>
+                </button>
+                <button class="sm-btn" onclick= "window.open('https://www.instagram.com/jssateb_official/?hl=en','_blank')">
+                    <i class="fa fa-instagram"></i>
+                </button>
+                <button class="sm-btn" onclick= "window.open('https://www.youtube.com/watch?v=MRw-MADIXe0','_blank')">
+                    <i class="fa fa-youtube"></i>
+                </button>
+                <button class="sm-btn" onclick= "window.open('https://github.com/dashboard','_blank')">
+                    <i class="fa fa-github"></i>
+                </button>
+            </div>
+            </button>
+        </div>
+    </div>
+    <div id="cop">
+        <a href="#">
+            <button id="btn">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </a>
+    </div>
+</footer>
+<div class="" id="chatter-box-wrapper" ></div>  
+<script id="chat-forms-widget" type="text/javascript" charset="UTF-8" src="https://chat-forms.com/forms/widget/widget.js?cid=1643448642146-t8j"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./js/script.js"></script>
+<script src="./js/jq_script.js"></script>
+</html>

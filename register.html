@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS Project - User Registration</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/Images/jss.png" type="image/svg" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: #333;
+    }
+
+    form {
+        width: 300px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 5px;
+        color: #666;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #2596be;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+<nav id="nav_bar navbar sticky-top navbar-light bg-light">
+    <div id="logo">
+        <a href="#"><img id="nss_logo" src="assets/Images/jss.png" alt="National Service Scheme"></a>
+        <div id="logo_text">
+            <h1>JSSATE-B</h1>
+            <p>Srinivaspura</p>
+        </div>
+    </div>
+    <div id="nav_bg"></div>
+    <ul id="nav_links">
+        <li><a class="nav_link nav-active" href="#">Home</a></li>
+        <li><a class="nav_link" href="./register.html" target="_blank">Sign Up</a></li>
+        <li><a class="nav_link" href="./events.html">Events</a></li>
+        <li><a class="nav_link" href="./gallery.html">Gallery</a></li>
+        <li><a class="nav_link" href="./contactus.html">Contact Us</a></li>
+        <li>
+            <button id="vlog" class="btn btn-primary" onclick="openLoginPage()">Volunteer Login</button>
+            <script>
+                function openLoginPage() {
+                    window.open('login.html', '_blank');
+                }
+            </script>
+        </li>
+    </ul>
+    <div id="hamburger">
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+        <div class="hamburger_line"></div>
+    </div>
+</nav>
+
+<body>
+    <h2>User Registration Form</h2>
+    <form id="registrationForm" style="width: 33%; margin-bottom: 2rem;">
+        <div>
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+        </div><br>
+        <div>
+            <label for="email">Email-ID:</label>
+            <input type="email" id="email" name="email" required>
+        </div><br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div><br>
+        <div>
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" required>
+                <option value="">Select User Type</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Team Leader">Team Leader</option>
+                <option value="Guide">Guide</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+        </div><br>
+        <div>
+            <center>
+                <button type="submit">Submit</button>
+            </center>
+        </div>
+    </form>
+
+    <script src="register.js"></script>
+</body>
+<footer>
+    <div class="row fm justify-content-center">
+        <div class="footer_box col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="text">
+                FOLLOW US ON
+            </div>
+            <div class="sm">
+                <button class="sm-btn" onclick="window.open('https://www.facebook.com/JSSATEBlore/','_blank')">
+                    <i class="fa fa-facebook"></i>
+                </button>
+                <button class="sm-btn"
+                    onclick="window.open('https://www.instagram.com/jssateb_official/?hl=en','_blank')">
+                    <i class="fa fa-instagram"></i>
+                </button>
+                <button class="sm-btn" onclick="window.open('https://www.youtube.com/watch?v=MRw-MADIXe0','_blank')">
+                    <i class="fa fa-youtube"></i>
+                </button>
+                <button class="sm-btn" onclick="window.open('https://github.com/dashboard','_blank')">
+                    <i class="fa fa-github"></i>
+                </button>
+            </div>
+            </button>
+        </div>
+    </div>
+    <div id="cop">
+        <a href="#">
+            <button id="btn">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </a>
+    </div>
+</footer>
+
+</html>
